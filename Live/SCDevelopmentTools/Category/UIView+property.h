@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (property)
-@property (nonatomic , weak ) id <SCViewManagerProtocol>viewManager;
+@property (nonatomic , weak) id <SCViewManagerProtocol>viewManager;
+@property (nullable,readonly,copy) __kindof UIViewController *superController;
 @end

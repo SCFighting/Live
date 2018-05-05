@@ -21,8 +21,13 @@
     [super touchesBegan:touches withEvent:event];
     
     if ([self.viewManager respondsToSelector:@selector(handelEvent:info:)]) {
-        [self.viewManager handelEvent:@"handelTouchBegin" info:[NSDictionary dictionaryWithObjectsAndKeys:@"objc",@"key", nil]];
+        [self.viewManager handelEvent:@"handelTouchBegin:info:" view:self info:[NSDictionary dictionaryWithObjectsAndKeys:@"objc",@"key", nil]];
     }
+}
+
+-(void)dealloc
+{
+    NSLog(@"%s",__func__);
 }
 
 @end

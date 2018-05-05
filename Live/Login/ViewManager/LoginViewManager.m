@@ -7,17 +7,25 @@
 //
 
 #import "LoginViewManager.h"
+#import "AppDelegate.h"
 
 @implementation LoginViewManager
--(void)handelEvent:(NSString *)eventName info:(NSDictionary *)info
+-(void)handelEvent:(NSString *)eventName view:(UIView *)eventView info:(NSDictionary *)info
 {
     NSLog(@"eventName=%@",eventName);
-    [self performSelector:NSSelectorFromString([NSString stringWithFormat:@"%@:",eventName]) withObject:info];
+    [self performSelector:NSSelectorFromString(eventName) withObject:eventView withObject:info];
 }
 
--(void)handelTouchBegin:(NSDictionary *)info
+-(void)handelTouchBegin:(UIView *)eventView info:(NSDictionary *)info
 {
-    NSLog(@"###############################%@",info);
+    NSLog(@"############%@###################%@",[NSThread currentThread],info);
+    UITableViewController *ta = [[UITableViewController alloc] init];
+    [eventView.superController.navigationController pushViewController:ta animated:YES];
+}
+
+-(void)dealloc
+{
+    NSLog(@"%s",__func__);
 }
 
 @end
