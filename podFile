@@ -4,4 +4,5 @@ target 'Live' do
   pod 'Masonry'
   pod 'AFNetworking'
   pod 'ReactiveObjC', '~> 2.1.0'
+  pod 'GHConsole'
 end

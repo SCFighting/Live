@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "7C1324684A929D8DBA37C8E7249A29F9"
-               BlueprintName = "ReactiveObjC"
+               BlueprintIdentifier = "72AB4377B013C2B299AAA8BD1DA73F6E"
+               BlueprintName = "GHConsole"
                ReferencedContainer = "container:Pods.xcodeproj"
-               BuildableName = "ReactiveObjC.framework">
+               BuildableName = "GHConsole.framework">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		525D60ED20B7AD6000E6CB0B /* BaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D60EC20B7AD6000E6CB0B /* BaseAppDelegate.m */; };
+		525D60F020B7AE2A00E6CB0B /* NoticeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D60EF20B7AE2A00E6CB0B /* NoticeAppDelegate.m */; };
+		525D60F320B7AEC300E6CB0B /* StyleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D60F220B7AEC300E6CB0B /* StyleAppDelegate.m */; };
 		527D9069209C45A700D91BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D905F209C45A700D91BF5 /* Assets.xcassets */; };
 		527D906A209C45A700D91BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D905F209C45A700D91BF5 /* Assets.xcassets */; };
 		527D906B209C45A700D91BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D905F209C45A700D91BF5 /* Assets.xcassets */; };
@@ -76,6 +79,12 @@
 
 /* Begin PBXFileReference section */
 		45C8CC258FBE6681911AAC95 /* Pods-Live.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live.release.xcconfig"; path = "Pods/Target Support Files/Pods-Live/Pods-Live.release.xcconfig"; sourceTree = "<group>"; };
+		525D60EB20B7AD6000E6CB0B /* BaseAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseAppDelegate.h; sourceTree = "<group>"; };
+		525D60EC20B7AD6000E6CB0B /* BaseAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseAppDelegate.m; sourceTree = "<group>"; };
+		525D60EE20B7AE2A00E6CB0B /* NoticeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeAppDelegate.h; sourceTree = "<group>"; };
+		525D60EF20B7AE2A00E6CB0B /* NoticeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeAppDelegate.m; sourceTree = "<group>"; };
+		525D60F120B7AEC300E6CB0B /* StyleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleAppDelegate.h; sourceTree = "<group>"; };
+		525D60F220B7AEC300E6CB0B /* StyleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StyleAppDelegate.m; sourceTree = "<group>"; };
 		527D905F209C45A700D91BF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		527D9061209C45A700D91BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527D9063209C45A700D91BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -164,6 +173,12 @@
 			children = (
 				527D9067209C45A700D91BF5 /* AppDelegate.h */,
 				527D9068209C45A700D91BF5 /* AppDelegate.m */,
+				525D60EB20B7AD6000E6CB0B /* BaseAppDelegate.h */,
+				525D60EC20B7AD6000E6CB0B /* BaseAppDelegate.m */,
+				525D60EE20B7AE2A00E6CB0B /* NoticeAppDelegate.h */,
+				525D60EF20B7AE2A00E6CB0B /* NoticeAppDelegate.m */,
+				525D60F120B7AEC300E6CB0B /* StyleAppDelegate.h */,
+				525D60F220B7AEC300E6CB0B /* StyleAppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -543,12 +558,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Live/Pods-Live-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/GHConsole/GHConsole.framework",
 				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
 				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GHConsole.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
 			);
@@ -570,7 +587,10 @@
 				527D9078209C45A700D91BF5 /* AppDelegate.m in Sources */,
 				527D90B0209D55F600D91BF5 /* SCCategory.h in Sources */,
 				527D90BA209D5D6000D91BF5 /* LoginViewController.m in Sources */,
+				525D60F020B7AE2A00E6CB0B /* NoticeAppDelegate.m in Sources */,
 				527D9095209D4DA800D91BF5 /* SCBaseViewManager.m in Sources */,
+				525D60F320B7AEC300E6CB0B /* StyleAppDelegate.m in Sources */,
+				525D60ED20B7AD6000E6CB0B /* BaseAppDelegate.m in Sources */,
 				527D90A1209D4FF100D91BF5 /* SCBaseView.m in Sources */,
 				527D9072209C45A700D91BF5 /* main.m in Sources */,
 				527D90B5209D5D2A00D91BF5 /* SCBaseViewController.m in Sources */,

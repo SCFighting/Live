@@ -8,6 +8,10 @@
 
 #import "LoginView.h"
 
+@interface LoginView()
+
+@end
+
 @implementation LoginView
 
 -(instancetype)initWithViewManager:(id<SCViewManagerProtocol>)viewManager

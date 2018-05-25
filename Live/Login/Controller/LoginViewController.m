@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "LoginView.h"
 #import "LoginViewManager.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 @property (nonatomic , strong ) LoginView *loginView;
@@ -27,6 +28,8 @@
 }
 
 - (void)viewDidLoad {
+    AppDelegate *app = [[AppDelegate alloc] init];
+    app->_publicOne = @"dsge";
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
