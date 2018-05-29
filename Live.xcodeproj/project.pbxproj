@@ -13,6 +13,8 @@
 		5268BFF320BD57D8009C622D /* UIView+property.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268BFEC20BD57D8009C622D /* UIView+property.m */; };
 		5268BFF420BD57D8009C622D /* NSObject+property.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268BFEE20BD57D8009C622D /* NSObject+property.m */; };
 		5268BFF520BD57D8009C622D /* SCSafeMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268BFF120BD57D8009C622D /* SCSafeMutableArray.m */; };
+		5268BFF920BD8238009C622D /* SCBaseViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268BFF820BD8238009C622D /* SCBaseViewModel.m */; };
+		5268BFFC20BD8473009C622D /* SCLoginViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268BFFB20BD8473009C622D /* SCLoginViewModel.m */; };
 		527D9069209C45A700D91BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D905F209C45A700D91BF5 /* Assets.xcassets */; };
 		527D906A209C45A700D91BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D905F209C45A700D91BF5 /* Assets.xcassets */; };
 		527D906B209C45A700D91BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D905F209C45A700D91BF5 /* Assets.xcassets */; };
@@ -92,6 +94,10 @@
 		5268BFF120BD57D8009C622D /* SCSafeMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSafeMutableArray.m; sourceTree = "<group>"; };
 		5268BFF220BD57D8009C622D /* SCSafeMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSafeMutableArray.h; sourceTree = "<group>"; };
 		5268BFF620BD58EA009C622D /* SCCustomHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCCustomHeader.h; sourceTree = "<group>"; };
+		5268BFF720BD8238009C622D /* SCBaseViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCBaseViewModel.h; sourceTree = "<group>"; };
+		5268BFF820BD8238009C622D /* SCBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBaseViewModel.m; sourceTree = "<group>"; };
+		5268BFFA20BD8473009C622D /* SCLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCLoginViewModel.h; sourceTree = "<group>"; };
+		5268BFFB20BD8473009C622D /* SCLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewModel.m; sourceTree = "<group>"; };
 		527D905F209C45A700D91BF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		527D9061209C45A700D91BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527D9063209C45A700D91BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -262,6 +268,8 @@
 		527D908F209C53B100D91BF5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5268BFF720BD8238009C622D /* SCBaseViewModel.h */,
+				5268BFF820BD8238009C622D /* SCBaseViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -315,6 +323,8 @@
 		527D909B209D4FB300D91BF5 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				5268BFFA20BD8473009C622D /* SCLoginViewModel.h */,
+				5268BFFB20BD8473009C622D /* SCLoginViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -612,11 +622,13 @@
 				5268BFF520BD57D8009C622D /* SCSafeMutableArray.m in Sources */,
 				527D90BF209D5DF200D91BF5 /* LoginViewManager.m in Sources */,
 				527D9078209C45A700D91BF5 /* AppDelegate.m in Sources */,
+				5268BFFC20BD8473009C622D /* SCLoginViewModel.m in Sources */,
 				527D90BA209D5D6000D91BF5 /* LoginViewController.m in Sources */,
 				525D60F020B7AE2A00E6CB0B /* NoticeAppDelegate.m in Sources */,
 				527D9095209D4DA800D91BF5 /* SCBaseViewManager.m in Sources */,
 				525D60F320B7AEC300E6CB0B /* StyleAppDelegate.m in Sources */,
 				525D60ED20B7AD6000E6CB0B /* BaseAppDelegate.m in Sources */,
+				5268BFF920BD8238009C622D /* SCBaseViewModel.m in Sources */,
 				5268BFF420BD57D8009C622D /* NSObject+property.m in Sources */,
 				527D90A1209D4FF100D91BF5 /* SCBaseView.m in Sources */,
 				527D9072209C45A700D91BF5 /* main.m in Sources */,
