@@ -10,16 +10,6 @@
 
 @interface BaseAppDelegate : UIResponder<UIApplicationDelegate>
 {
-    NSString *_ttttttt;
-    @private
-    NSString *_privateOne;
-    NSString *_privateTwo;
-    @protected
-    NSString *_protectOne;
-    NSString *_protectTwo;
-    @public
-    NSString *_publicOne;
-    NSString *_publicTwo;
     
 }
 @property (strong, nonatomic) UIWindow *window;

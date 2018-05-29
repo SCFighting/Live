@@ -10,6 +10,9 @@
 		525D60ED20B7AD6000E6CB0B /* BaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D60EC20B7AD6000E6CB0B /* BaseAppDelegate.m */; };
 		525D60F020B7AE2A00E6CB0B /* NoticeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D60EF20B7AE2A00E6CB0B /* NoticeAppDelegate.m */; };
 		525D60F320B7AEC300E6CB0B /* StyleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D60F220B7AEC300E6CB0B /* StyleAppDelegate.m */; };
+		5268BFF320BD57D8009C622D /* UIView+property.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268BFEC20BD57D8009C622D /* UIView+property.m */; };
+		5268BFF420BD57D8009C622D /* NSObject+property.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268BFEE20BD57D8009C622D /* NSObject+property.m */; };
+		5268BFF520BD57D8009C622D /* SCSafeMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 5268BFF120BD57D8009C622D /* SCSafeMutableArray.m */; };
 		527D9069209C45A700D91BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D905F209C45A700D91BF5 /* Assets.xcassets */; };
 		527D906A209C45A700D91BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D905F209C45A700D91BF5 /* Assets.xcassets */; };
 		527D906B209C45A700D91BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527D905F209C45A700D91BF5 /* Assets.xcassets */; };
@@ -40,12 +43,6 @@
 		527D90A6209D500F00D91BF5 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D90A5209D500F00D91BF5 /* LoginView.m */; };
 		527D90A7209D500F00D91BF5 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D90A5209D500F00D91BF5 /* LoginView.m */; };
 		527D90A8209D500F00D91BF5 /* LoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D90A5209D500F00D91BF5 /* LoginView.m */; };
-		527D90AC209D530900D91BF5 /* UIView+property.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D90AB209D530900D91BF5 /* UIView+property.m */; };
-		527D90AD209D530900D91BF5 /* UIView+property.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D90AB209D530900D91BF5 /* UIView+property.m */; };
-		527D90AE209D530900D91BF5 /* UIView+property.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D90AB209D530900D91BF5 /* UIView+property.m */; };
-		527D90B0209D55F600D91BF5 /* SCCategory.h in Sources */ = {isa = PBXBuildFile; fileRef = 527D90AF209D55F600D91BF5 /* SCCategory.h */; };
-		527D90B1209D55F600D91BF5 /* SCCategory.h in Sources */ = {isa = PBXBuildFile; fileRef = 527D90AF209D55F600D91BF5 /* SCCategory.h */; };
-		527D90B2209D55F600D91BF5 /* SCCategory.h in Sources */ = {isa = PBXBuildFile; fileRef = 527D90AF209D55F600D91BF5 /* SCCategory.h */; };
 		527D90B5209D5D2A00D91BF5 /* SCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D90B4209D5D2A00D91BF5 /* SCBaseViewController.m */; };
 		527D90B6209D5D2A00D91BF5 /* SCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D90B4209D5D2A00D91BF5 /* SCBaseViewController.m */; };
 		527D90B7209D5D2A00D91BF5 /* SCBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D90B4209D5D2A00D91BF5 /* SCBaseViewController.m */; };
@@ -85,6 +82,16 @@
 		525D60EF20B7AE2A00E6CB0B /* NoticeAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeAppDelegate.m; sourceTree = "<group>"; };
 		525D60F120B7AEC300E6CB0B /* StyleAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StyleAppDelegate.h; sourceTree = "<group>"; };
 		525D60F220B7AEC300E6CB0B /* StyleAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StyleAppDelegate.m; sourceTree = "<group>"; };
+		5268BFDF20BCED09009C622D /* SCViewModelProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCViewModelProtocol.h; sourceTree = "<group>"; };
+		5268BFE120BD4800009C622D /* ThirdPartHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThirdPartHeader.h; sourceTree = "<group>"; };
+		5268BFEB20BD57D8009C622D /* SCCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCategory.h; sourceTree = "<group>"; };
+		5268BFEC20BD57D8009C622D /* UIView+property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+property.m"; sourceTree = "<group>"; };
+		5268BFED20BD57D8009C622D /* NSObject+property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+property.h"; sourceTree = "<group>"; };
+		5268BFEE20BD57D8009C622D /* NSObject+property.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+property.m"; sourceTree = "<group>"; };
+		5268BFEF20BD57D8009C622D /* UIView+property.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+property.h"; sourceTree = "<group>"; };
+		5268BFF120BD57D8009C622D /* SCSafeMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSafeMutableArray.m; sourceTree = "<group>"; };
+		5268BFF220BD57D8009C622D /* SCSafeMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSafeMutableArray.h; sourceTree = "<group>"; };
+		5268BFF620BD58EA009C622D /* SCCustomHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCCustomHeader.h; sourceTree = "<group>"; };
 		527D905F209C45A700D91BF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		527D9061209C45A700D91BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527D9063209C45A700D91BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -101,9 +108,6 @@
 		527D90A0209D4FF100D91BF5 /* SCBaseView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBaseView.m; sourceTree = "<group>"; };
 		527D90A4209D500F00D91BF5 /* LoginView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginView.h; sourceTree = "<group>"; };
 		527D90A5209D500F00D91BF5 /* LoginView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginView.m; sourceTree = "<group>"; };
-		527D90AA209D530900D91BF5 /* UIView+property.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+property.h"; sourceTree = "<group>"; };
-		527D90AB209D530900D91BF5 /* UIView+property.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+property.m"; sourceTree = "<group>"; };
-		527D90AF209D55F600D91BF5 /* SCCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCCategory.h; sourceTree = "<group>"; };
 		527D90B3209D5D2A00D91BF5 /* SCBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCBaseViewController.h; sourceTree = "<group>"; };
 		527D90B4209D5D2A00D91BF5 /* SCBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBaseViewController.m; sourceTree = "<group>"; };
 		527D90B8209D5D6000D91BF5 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -155,6 +159,36 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5268BFE020BD47DA009C622D /* HeaderFile */ = {
+			isa = PBXGroup;
+			children = (
+				5268BFE120BD4800009C622D /* ThirdPartHeader.h */,
+			);
+			path = HeaderFile;
+			sourceTree = "<group>";
+		};
+		5268BFEA20BD57D8009C622D /* SCCategory */ = {
+			isa = PBXGroup;
+			children = (
+				5268BFED20BD57D8009C622D /* NSObject+property.h */,
+				5268BFEE20BD57D8009C622D /* NSObject+property.m */,
+				5268BFEB20BD57D8009C622D /* SCCategory.h */,
+				5268BFEF20BD57D8009C622D /* UIView+property.h */,
+				5268BFEC20BD57D8009C622D /* UIView+property.m */,
+			);
+			path = SCCategory;
+			sourceTree = "<group>";
+		};
+		5268BFF020BD57D8009C622D /* SCCustom */ = {
+			isa = PBXGroup;
+			children = (
+				5268BFF620BD58EA009C622D /* SCCustomHeader.h */,
+				5268BFF220BD57D8009C622D /* SCSafeMutableArray.h */,
+				5268BFF120BD57D8009C622D /* SCSafeMutableArray.m */,
+			);
+			path = SCCustom;
+			sourceTree = "<group>";
+		};
 		527D905E209C45A700D91BF5 /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,7 +221,8 @@
 			isa = PBXGroup;
 			children = (
 				527D9082209C4B9B00D91BF5 /* SCDevelopmentTools.h */,
-				527D90A9209D518D00D91BF5 /* Category */,
+				5268BFEA20BD57D8009C622D /* SCCategory */,
+				5268BFF020BD57D8009C622D /* SCCustom */,
 				527D9086209C4C5E00D91BF5 /* SCProtocol */,
 			);
 			path = SCDevelopmentTools;
@@ -197,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				527D9087209C4E1B00D91BF5 /* SCViewManagerProtocol.h */,
+				5268BFDF20BCED09009C622D /* SCViewModelProtocol.h */,
 			);
 			path = SCProtocol;
 			sourceTree = "<group>";
@@ -204,6 +240,7 @@
 		527D908D209C53B100D91BF5 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				5268BFE020BD47DA009C622D /* HeaderFile */,
 				527D908E209C53B100D91BF5 /* ViewManager */,
 				527D908F209C53B100D91BF5 /* ViewModel */,
 				527D9090209C53B100D91BF5 /* Controller */,
@@ -307,25 +344,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		527D90A9209D518D00D91BF5 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				527D90AA209D530900D91BF5 /* UIView+property.h */,
-				527D90AB209D530900D91BF5 /* UIView+property.m */,
-				527D90AF209D55F600D91BF5 /* SCCategory.h */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
 		52A229062092BED700B979C0 = {
 			isa = PBXGroup;
 			children = (
+				21FDA6219B270456CFD29D42 /* Frameworks */,
 				52A229112092BED700B979C0 /* Live */,
 				52A2292A2092BED800B979C0 /* LiveTests */,
 				52A229352092BED800B979C0 /* LiveUITests */,
-				52A229102092BED700B979C0 /* Products */,
 				79D1B0620525F4473C651DD0 /* Pods */,
-				21FDA6219B270456CFD29D42 /* Frameworks */,
+				52A229102092BED700B979C0 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,10 +369,10 @@
 		52A229112092BED700B979C0 /* Live */ = {
 			isa = PBXGroup;
 			children = (
-				527D9099209D4FB300D91BF5 /* Login */,
-				527D908D209C53B100D91BF5 /* Base */,
-				527D907B209C470000D91BF5 /* SCDevelopmentTools */,
 				527D9066209C45A700D91BF5 /* AppDelegate */,
+				527D908D209C53B100D91BF5 /* Base */,
+				527D9099209D4FB300D91BF5 /* Login */,
+				527D907B209C470000D91BF5 /* SCDevelopmentTools */,
 				527D905E209C45A700D91BF5 /* Source */,
 			);
 			path = Live;
@@ -582,17 +609,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				527D90A6209D500F00D91BF5 /* LoginView.m in Sources */,
+				5268BFF520BD57D8009C622D /* SCSafeMutableArray.m in Sources */,
 				527D90BF209D5DF200D91BF5 /* LoginViewManager.m in Sources */,
-				527D90AC209D530900D91BF5 /* UIView+property.m in Sources */,
 				527D9078209C45A700D91BF5 /* AppDelegate.m in Sources */,
-				527D90B0209D55F600D91BF5 /* SCCategory.h in Sources */,
 				527D90BA209D5D6000D91BF5 /* LoginViewController.m in Sources */,
 				525D60F020B7AE2A00E6CB0B /* NoticeAppDelegate.m in Sources */,
 				527D9095209D4DA800D91BF5 /* SCBaseViewManager.m in Sources */,
 				525D60F320B7AEC300E6CB0B /* StyleAppDelegate.m in Sources */,
 				525D60ED20B7AD6000E6CB0B /* BaseAppDelegate.m in Sources */,
+				5268BFF420BD57D8009C622D /* NSObject+property.m in Sources */,
 				527D90A1209D4FF100D91BF5 /* SCBaseView.m in Sources */,
 				527D9072209C45A700D91BF5 /* main.m in Sources */,
+				5268BFF320BD57D8009C622D /* UIView+property.m in Sources */,
 				527D90B5209D5D2A00D91BF5 /* SCBaseViewController.m in Sources */,
 				527D9083209C4B9B00D91BF5 /* SCDevelopmentTools.h in Sources */,
 			);
@@ -608,12 +636,10 @@
 				527D9096209D4DA800D91BF5 /* SCBaseViewManager.m in Sources */,
 				527D90C0209D5DF200D91BF5 /* LoginViewManager.m in Sources */,
 				527D90A2209D4FF100D91BF5 /* SCBaseView.m in Sources */,
-				527D90AD209D530900D91BF5 /* UIView+property.m in Sources */,
 				52A2292C2092BED800B979C0 /* LiveTests.m in Sources */,
 				527D90B6209D5D2A00D91BF5 /* SCBaseViewController.m in Sources */,
 				527D9079209C45A700D91BF5 /* AppDelegate.m in Sources */,
 				527D90BB209D5D6000D91BF5 /* LoginViewController.m in Sources */,
-				527D90B1209D55F600D91BF5 /* SCCategory.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -627,12 +653,10 @@
 				527D9097209D4DA800D91BF5 /* SCBaseViewManager.m in Sources */,
 				527D90C1209D5DF200D91BF5 /* LoginViewManager.m in Sources */,
 				527D90A3209D4FF100D91BF5 /* SCBaseView.m in Sources */,
-				527D90AE209D530900D91BF5 /* UIView+property.m in Sources */,
 				52A229372092BED800B979C0 /* LiveUITests.m in Sources */,
 				527D90B7209D5D2A00D91BF5 /* SCBaseViewController.m in Sources */,
 				527D907A209C45A700D91BF5 /* AppDelegate.m in Sources */,
 				527D90BC209D5D6000D91BF5 /* LoginViewController.m in Sources */,
-				527D90B2209D55F600D91BF5 /* SCCategory.h in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

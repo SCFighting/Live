@@ -8,10 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+#pragma mark - custom
+
+#import "SCCustom/SCCustomHeader.h"
+
 #pragma mark - protocol
 
-#import "SCViewManagerProtocol.h"
+#import "SCProtocol/SCViewManagerProtocol.h"
+#import "SCProtocol/SCViewModelProtocol.h"
 
 #pragma mark - category
 
-#import "SCCategory.h"
+#import "SCCategory/SCCategory.h"
+
+
+
+
+

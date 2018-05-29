@@ -15,10 +15,6 @@
 #pragma mark - myself
 
 #import "SCDevelopmentTools.h"
-
-#pragma mark - third
-
-#import <Masonry/Masonry.h>
-
+#import "ThirdPartHeader.h"
 
 #endif /* PrefixHeader_pch */

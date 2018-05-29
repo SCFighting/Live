@@ -9,3 +9,4 @@
 #import <Foundation/Foundation.h>
 
 #import "UIView+property.h"
+#import "NSObject+property.h"
