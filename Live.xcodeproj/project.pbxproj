@@ -98,6 +98,7 @@
 		5268BFF820BD8238009C622D /* SCBaseViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCBaseViewModel.m; sourceTree = "<group>"; };
 		5268BFFA20BD8473009C622D /* SCLoginViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SCLoginViewModel.h; sourceTree = "<group>"; };
 		5268BFFB20BD8473009C622D /* SCLoginViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SCLoginViewModel.m; sourceTree = "<group>"; };
+		5268BFFE20BE53A6009C622D /* LiveConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LiveConst.h; sourceTree = "<group>"; };
 		527D905F209C45A700D91BF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		527D9061209C45A700D91BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		527D9063209C45A700D91BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -169,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				5268BFE120BD4800009C622D /* ThirdPartHeader.h */,
+				5268BFFE20BE53A6009C622D /* LiveConst.h */,
 			);
 			path = HeaderFile;
 			sourceTree = "<group>";

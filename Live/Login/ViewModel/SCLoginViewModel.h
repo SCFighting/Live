@@ -9,5 +9,5 @@
 #import "SCBaseViewModel.h"
 
 @interface SCLoginViewModel : SCBaseViewModel
-
+-(void)login;
 @end

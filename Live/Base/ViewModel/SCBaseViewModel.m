@@ -8,6 +8,33 @@
 
 #import "SCBaseViewModel.h"
 
+@interface SCBaseViewModel()
+{
+    AFHTTPSessionManager *_manager;
+}
+
+@end
+
 @implementation SCBaseViewModel
+
+-(NSURLSessionDataTask *)getDataFromURL:(NSString *)url parameters:(id)parameters progress:(requestProgress)progress success:(requestSuccess)success failure:(requestFailure)failure
+{
+    [self initAFN];
+    NSURLSessionDataTask *task = [_manager GET:url parameters:parameters progress:progress success:success failure:failure];
+    return task;
+}
+
+-(NSURLSessionDataTask *)postDataToURL:(NSString *)url parameters:(id)parameters progress:(requestProgress)progress success:(requestSuccess)success failure:(requestFailure)failure
+{
+    [self initAFN];
+    NSURLSessionDataTask *task = [_manager POST:url parameters:parameters progress:progress success:success failure:failure];
+    return task;
+}
+
+-(void)initAFN
+{
+    NSURLSessionConfiguration *configuration = [[NSURLSessionConfiguration alloc] init];
+    _manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:ProductServiceAdd] sessionConfiguration:configuration];
+}
 
 @end

@@ -10,10 +10,12 @@
 #import "LoginView.h"
 #import "LoginViewManager.h"
 #import "AppDelegate.h"
+#import "SCLoginViewModel.h"
 
 @interface LoginViewController ()
 @property (nonatomic , strong ) LoginView *loginView;
 @property (nonatomic , strong ) LoginViewManager *loginViewManager;
+@property (nonatomic , strong ) SCLoginViewModel *loginViewModel;
 @end
 
 @implementation LoginViewController
@@ -29,7 +31,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self.loginViewModel login];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,6 +59,14 @@
         _loginViewManager = [[LoginViewManager alloc] init];
     }
     return _loginViewManager;
+}
+
+-(SCLoginViewModel *)loginViewModel
+{
+    if (_loginViewModel == nil) {
+        _loginViewModel = [[SCLoginViewModel alloc] init];
+    }
+    return _loginViewModel;
 }
 
 @end

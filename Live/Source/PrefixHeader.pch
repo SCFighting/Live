@@ -16,5 +16,6 @@
 
 #import "SCDevelopmentTools.h"
 #import "ThirdPartHeader.h"
+#import "LiveConst.h"
 
 #endif /* PrefixHeader_pch */
