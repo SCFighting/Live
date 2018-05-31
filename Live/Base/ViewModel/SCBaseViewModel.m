@@ -33,7 +33,7 @@
 
 -(void)initAFN
 {
-    NSURLSessionConfiguration *configuration = [[NSURLSessionConfiguration alloc] init];
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     _manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:ProductServiceAdd] sessionConfiguration:configuration];
 }
 

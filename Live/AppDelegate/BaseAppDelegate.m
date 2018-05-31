@@ -18,4 +18,9 @@
  进入应用
  */
 -(void)enterApplication{}
+
++(instancetype)shareAppdelegate
+{
+    return (BaseAppDelegate *)[UIApplication sharedApplication].delegate;
+}
 @end

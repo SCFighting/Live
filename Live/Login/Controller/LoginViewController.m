@@ -11,6 +11,7 @@
 #import "LoginViewManager.h"
 #import "AppDelegate.h"
 #import "SCLoginViewModel.h"
+#import "AppDelegate.h"
 
 @interface LoginViewController ()
 @property (nonatomic , strong ) LoginView *loginView;
@@ -31,7 +32,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.loginViewModel login];
+    [self.loginViewModel loginWithSuccess:^(id response) {
+        NSLog(@"####%@########",self.loginViewModel);
+    }];
+    AppDelegate *delegate = [AppDelegate shareAppdelegate];
+    delegate.window.rootViewController = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +46,7 @@
 -(void)dealloc
 {
     NSLog(@"%s",__func__);
+    
 }
 
 #pragma mark - getter

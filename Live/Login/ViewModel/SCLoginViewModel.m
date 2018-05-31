@@ -15,7 +15,7 @@
     GGLog(@"%s",__FUNCTION__);
 }
 
--(void)login
+-(void)loginWithSuccess:(successLogin)success
 {
     NSDictionary *parameters = [NSDictionary dictionaryWithObjectsAndKeys:@"a@b.com",@"user[email]",@"aaaaaaaa",@"user[password]",@"iphone",@"platform",@"4.1.7",@"os_vision",@"4.1.7",@"version", nil];
     
@@ -24,6 +24,7 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         GGLog(@"%@",responseObject);
         [self.requestArray removeObject:task];
+        success(responseObject);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         GGLog(@"%@",error.userInfo);
         [self.requestArray removeObject:task];

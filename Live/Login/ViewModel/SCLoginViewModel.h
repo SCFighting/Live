@@ -7,7 +7,7 @@
 //
 
 #import "SCBaseViewModel.h"
-
+typedef void (^successLogin)(id response);
 @interface SCLoginViewModel : SCBaseViewModel
--(void)login;
+-(void)loginWithSuccess:(successLogin)success;
 @end

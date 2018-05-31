@@ -18,4 +18,6 @@
  进入应用
  */
 -(void)enterApplication;
+
++(instancetype)shareAppdelegate;
 @end
