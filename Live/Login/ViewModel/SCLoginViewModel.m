@@ -13,6 +13,9 @@
 -(void)dealloc
 {
     GGLog(@"%s",__FUNCTION__);
+    if (self.requestArray.count > 0) {
+        GGLog(@"############################");
+    }
 }
 
 -(void)loginWithSuccess:(successLogin)success
@@ -29,7 +32,11 @@
         GGLog(@"%@",error.userInfo);
         [self.requestArray removeObject:task];
     }];
+    if (self.requestArray == nil) {
+        self.requestArray = [[SCSafeMutableArray alloc] init];
+    }
     [self.requestArray addObject:task];
+    NSLog(@"%ld",(long)self.requestArray.count);
 }
 
 @end

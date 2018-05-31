@@ -25,4 +25,13 @@
     [self.window makeKeyAndVisible];
 }
 
+
+/**
+ 初始化屏幕 log
+ */
+-(void)initScreenLog
+{
+    [[GHConsole sharedConsole] startPrintLog];
+}
+
 @end

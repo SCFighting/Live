@@ -35,4 +35,6 @@ typedef void(^requestFailure)(NSURLSessionDataTask * _Nullable task, NSError * _
  @return 任务
  */
 -(NSURLSessionDataTask *)postDataToURL:(NSString *)url parameters:(id)parameters progress:(requestProgress)progress success:(requestSuccess)success failure:(requestFailure)failure;
+
+-(void)cancelAllRequest;
 @end

@@ -33,9 +33,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self.loginViewModel loginWithSuccess:^(id response) {
-        NSLog(@"####%@########",self.loginViewModel);
+//        NSLog(@"####%@########",self.loginViewModel);
     }];
-    AppDelegate *delegate = [AppDelegate shareAppdelegate];
+    AppDelegate *delegate = [AppDelegate shareDelegate];
     delegate.window.rootViewController = nil;
 }
 
@@ -46,7 +46,9 @@
 -(void)dealloc
 {
     NSLog(@"%s",__func__);
-    
+    if (self.loginViewModel.requestArray.count > 0) {
+        [self.loginViewModel cancelAllRequest];
+    }
 }
 
 #pragma mark - getter

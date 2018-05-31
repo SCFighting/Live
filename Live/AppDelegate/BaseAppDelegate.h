@@ -19,5 +19,18 @@
  */
 -(void)enterApplication;
 
-+(instancetype)shareAppdelegate;
+
+/**
+ 单例
+
+ @return  appdelegate
+ */
++(instancetype)shareDelegate;
+
+
+/**
+ 初始化屏幕 log
+ */
+-(void)initScreenLog;
+
 @end

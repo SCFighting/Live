@@ -10,4 +10,7 @@
 
 @protocol SCViewModelProtocol <NSObject>
 
+//@optional
+-(void)cancelAllRequest;
+
 @end

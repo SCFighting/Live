@@ -37,4 +37,12 @@
     _manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:ProductServiceAdd] sessionConfiguration:configuration];
 }
 
+-(void)cancelAllRequest
+{
+    for (NSURLSessionDataTask *task in self.requestArray.safeArray) {
+        [task cancel];
+    }
+}
+
+
 @end

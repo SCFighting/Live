@@ -19,7 +19,7 @@
  */
 -(void)enterApplication{}
 
-+(instancetype)shareAppdelegate
++(instancetype)shareDelegate
 {
     return (BaseAppDelegate *)[UIApplication sharedApplication].delegate;
 }
