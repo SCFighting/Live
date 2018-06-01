@@ -5,4 +5,5 @@ target 'Live' do
   pod 'AFNetworking'
   pod 'ReactiveObjC', '~> 2.1.0'
   pod 'GHConsole'
+  pod 'TXLiteAVSDK_Professional'
 end

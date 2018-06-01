@@ -4,6 +4,7 @@
 //
 //  Created by liaoWorking on 22/11/2017.
 //  Copyright © 2017 廖光辉. All rights reserved.
+//  https://github.com/Liaoworking/GHConsole for lastest version
 //
 
 #import "GHConsole.h"
@@ -12,16 +13,23 @@
 #import <sys/uio.h>
 #import <pthread/pthread.h>
 #define USE_PTHREAD_THREADID_NP                (kCFCoreFoundationVersionNumber >= kCFCoreFoundationVersionNumber_iOS_8_0)
+#define KIsiPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
 #pragma mark- GHConsoleRootViewController
 typedef void (^clearTextBlock)(void);
+typedef void (^readTextBlock)(void);
+
 @interface GHConsoleRootViewController : UIViewController
 {
     UITextView *_textView;
     UIButton *_clearBtn;
+    UIButton *_saveBtn;
+    UIButton *_readLogBtn;
 }
 @property (nonatomic,copy) NSString *text;
 @property (nonatomic) BOOL scrollEnable;
 @property (nonatomic, copy) clearTextBlock clearLogText;
+@property (nonatomic, copy) readTextBlock readLog;
 
 @end
 
@@ -31,19 +39,17 @@ typedef void (^clearTextBlock)(void);
     [super viewDidLoad];
     [self configTextField];
     [self configClearBtn];
+    [self configSaveBtn];
+    [self configReadBtn];
 }
 
 - (void)configTextField{
-    
     _textView = [[UITextView alloc] initWithFrame:self.view.bounds];
     _textView.backgroundColor = [UIColor blackColor];
     _textView.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     _textView.font = [UIFont boldSystemFontOfSize:13];
-
     _textView.textColor = [UIColor whiteColor];
-    _textView.editable = NO;
-    _textView.scrollEnabled = NO;
-    _textView.selectable = NO;
+    _textView.editable = _textView.scrollEnabled =_textView.selectable = NO;
     _textView.alwaysBounceVertical = YES;
 #ifdef __IPHONE_11_0
     if([_textView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]){
@@ -57,24 +63,60 @@ typedef void (^clearTextBlock)(void);
     [self.view addSubview:_textView];
     _textView.text = self.text;
     [_textView scrollRectToVisible:CGRectMake(0, _textView.contentSize.height-15, _textView.contentSize.width, 10) animated:YES];
-    
 }
 
 - (void)configClearBtn{
-    
-    _clearBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width - 100, 20, 80, 30)];
+    _clearBtn = [[UIButton alloc]initWithFrame:CGRectMake(self.view.bounds.size.width - 80, KIsiPhoneX?40:20, 60, 30)];
     [_clearBtn addTarget:self action:@selector(clearText) forControlEvents:UIControlEventTouchUpInside];
     [_clearBtn setTitle:@"clear" forState:UIControlStateNormal];
-    [_clearBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [_clearBtn setTitleColor:[UIColor colorWithRed:0/255.0 green:212/255.0 blue:59/255.0 alpha:1] forState:UIControlStateNormal];
     _clearBtn.layer.borderWidth = 2;
-    _clearBtn.layer.borderColor = [[UIColor whiteColor] CGColor];
+    _clearBtn.layer.borderColor = [UIColor colorWithRed:0/255.0 green:212/255.0 blue:59/255.0 alpha:1].CGColor;
     [self.view addSubview:_clearBtn];
-    
 }
+
+- (void)configSaveBtn{
+    _saveBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(_clearBtn.frame) - 70, KIsiPhoneX?40:20, 60, 30)];
+    [_saveBtn addTarget:self action:@selector(saveText) forControlEvents:UIControlEventTouchUpInside];
+    [_saveBtn setTitle:@"save" forState:UIControlStateNormal];
+    [_saveBtn setTitleColor:[UIColor colorWithRed:251/255.0 green:187/255.0 blue:0/255.0 alpha:1] forState:UIControlStateNormal];
+    _saveBtn.layer.borderWidth = 2;
+    _saveBtn.layer.borderColor = [[UIColor colorWithRed:251/255.0 green:187/255.0 blue:0/255.0 alpha:1] CGColor];
+    [self.view addSubview:_saveBtn];
+}
+
+- (void)configReadBtn{
+    _readLogBtn = [[UIButton alloc]initWithFrame:CGRectMake(CGRectGetMinX(_saveBtn.frame) - 70, KIsiPhoneX?40:20, 60, 30)];
+    [_readLogBtn addTarget:self action:@selector(readSavedText) forControlEvents:UIControlEventTouchUpInside];
+    [_readLogBtn setTitle:@"load" forState:UIControlStateNormal];
+    [_readLogBtn setTitleColor:[UIColor colorWithRed:247/255.0 green:59/255.0 blue:59/255.0 alpha:1] forState:UIControlStateNormal];
+    _readLogBtn.layer.borderWidth = 2;
+    _readLogBtn.layer.borderColor = [[UIColor colorWithRed:247/255.0 green:59/255.0 blue:59/255.0 alpha:1] CGColor];
+    _readLogBtn.hidden = [[NSUserDefaults standardUserDefaults]objectForKey:@"textSaveKey"]?false:true;
+    [self.view addSubview:_readLogBtn];
+}
+
 
 - (void)clearText{
     if (self.clearLogText) {
         self.clearLogText();
+    }
+}
+
+- (void)saveText{
+    if (_textView.text.length<1) {
+        return;
+    }else{
+        [[NSUserDefaults standardUserDefaults]setObject:_textView.text forKey:@"textSaveKey"];
+        if (_readLogBtn.isHidden) {
+            _readLogBtn.hidden = false;
+        }
+    }
+}
+
+- (void)readSavedText{
+    if (self.readLog) {
+        self.readLog();
     }
 }
 
@@ -88,6 +130,10 @@ typedef void (^clearTextBlock)(void);
 
 - (void)setScrollEnable:(BOOL)scrollEnable {
     _textView.scrollEnabled = scrollEnable;
+}
+
+- (BOOL)prefersStatusBarHidden{
+    return false;
 }
 @end
 
@@ -115,7 +161,7 @@ typedef void (^clearTextBlock)(void);
 + (instancetype)consoleWindow {
     GHConsoleWindow *window = [[self alloc] init];
     window.windowLevel = UIWindowLevelStatusBar + 100;
-    window.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 30, 120, [UIScreen mainScreen].bounds.size.width - 60, 90);
+    window.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 30, 120, 30, 90);
     return window;
 }
 
@@ -129,7 +175,7 @@ typedef void (^clearTextBlock)(void);
 }
 
 - (void)minimize {
-    self.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 30, 120, [UIScreen mainScreen].bounds.size.width - 60, 90);
+    self.frame = CGRectMake([UIScreen mainScreen].bounds.size.width - 30, 120, 30, 90);
     self.consoleRootViewController.scrollEnable = NO;
 }
 
@@ -148,19 +194,15 @@ typedef void (^clearTextBlock)(void);
 }
 
 @property (nonatomic, strong)NSString *string;
-///是否显示控制台
 @property (nonatomic, assign)BOOL isShowConsole;
-//添加一个全局的logString 防止局部清除
+//a global variable to prove performance
 @property (nonatomic, copy)NSMutableString *logSting;
-//记录打印数，来确定打印更新
+@property (nonatomic, copy)NSString *funcString;
+
 @property (nonatomic, assign)NSInteger currentLogCount;
-//是否全屏
 @property (nonatomic, assign)BOOL isFullScreen;
-//添加的向外的手势，为了避免和查看log日志的手势冲突  isShow之后把手势移除
 @property (nonatomic, strong)UIPanGestureRecognizer *panOutGesture;
 @property (nonatomic,strong) GHConsoleWindow *consoleWindow;
-///性能优化，使用全局变量压测会有明显性能提升
-@property (nonatomic, copy)NSString *funcString;
 @property (nonatomic, strong)NSDateFormatter *formatter;
 @property (nonatomic, copy)NSString *msgString;
 @property (nonatomic, strong)NSDate *now;
@@ -169,7 +211,6 @@ typedef void (^clearTextBlock)(void);
 
 
 + (instancetype)sharedConsole {
-    
     static GHConsole *_instance;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -188,9 +229,12 @@ typedef void (^clearTextBlock)(void);
             __strong __typeof(weakSelf)strongSelf = weakSelf;
             [strongSelf clearAllText];
         };
-        //添加右滑隐藏手势
+        _consoleWindow.consoleRootViewController.readLog = ^{
+            __strong __typeof(weakSelf)strongSelf = weakSelf;
+            [strongSelf readSavedText];
+        };
+        //right direction swipe and double tap to make the console be hidden
         UISwipeGestureRecognizer *swipeGest = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(swipeLogView:)];
-        //添加双击全屏或者隐藏的手势
         UITapGestureRecognizer *tappGest = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(doubleTapTextView:)];
         tappGest.numberOfTapsRequired = 2;
         
@@ -201,7 +245,9 @@ typedef void (^clearTextBlock)(void);
     return _consoleWindow;
 }
 
-//开始显示log日志
+/**
+ start printing
+ */
 - (void)startPrintLog{
     _isFullScreen = NO;
     _isShowConsole = YES;
@@ -209,11 +255,17 @@ typedef void (^clearTextBlock)(void);
     _logSting = [NSMutableString new];
     _formatter = [[NSDateFormatter alloc]init];
     _formatter.dateFormat = @"yyyy-MM-dd HH:mm:ss.SSS";
-    GGLog(@"GHConsole start working");
-    
+    GGLog(@"GHConsole start working!");
+  
+    //如果想在release情况下也能显示控制台打印请把stopPrinting方法注释掉
+    // if you want to see GHConsole at the release mode you will annotating the stopPrinting func below here.
+#ifndef DEBUG
+    [self stopPrinting];
+#endif
 }
-//停止显示
-- (void)stopPringting{
+/**
+ stop printing
+ */- (void)stopPrinting{
     self.consoleWindow.hidden = YES;
     _isShowConsole = NO;
 }
@@ -227,13 +279,13 @@ typedef void (^clearTextBlock)(void);
         va_start(args, format);
         
         _msgString = [[NSString alloc] initWithFormat:format arguments:args];
-        //UI上去展示日志内容
+        //showing log in UI
         [self printMSG:_msgString andFunc:function andLine:line];
     }
 }
 
 - (void)printMSG:(NSString *)msg andFunc:(const char *)function andLine:(NSInteger )Line{
-    //方法名C转OC
+    //convert C function name to OC
     _funcString = [NSString stringWithUTF8String:function];
     
     _now =[NSDate new];
@@ -243,7 +295,7 @@ typedef void (^clearTextBlock)(void);
     if ([msg canBeConvertedToEncoding:NSUTF8StringEncoding]) {
         resultCString = [msg cStringUsingEncoding:NSUTF8StringEncoding];
     }
-    //控制台打印
+    //printing at system concole
     printf("%s", resultCString);
     [_logSting appendString:msg];
     if (_isShowConsole && _isFullScreen) {//如果显示的话手机上的控制台开始显示。
@@ -258,8 +310,16 @@ typedef void (^clearTextBlock)(void);
     self.consoleWindow.consoleRootViewController.text = _logSting;
 }
 
-#pragma mark-  三种手势的添加
-//右滑隐藏
+- (void)readSavedText{
+   NSString *savedString = [[NSUserDefaults standardUserDefaults]objectForKey:@"textSaveKey"];
+    _logSting = [savedString stringByAppendingString:@"\n-----------------RECORD-----------------\n\n"].mutableCopy;
+    self.consoleWindow.consoleRootViewController.text = _logSting;
+}
+
+#pragma mark- gesture function
+/**
+ right direction to hidden
+ */
 - (void)swipeLogView:(UISwipeGestureRecognizer *)swipeGesture{
     
     if (_isFullScreen) {//如果是显示情况并且往右边滑动就隐藏
@@ -273,12 +333,14 @@ typedef void (^clearTextBlock)(void);
         }
     }
 }
-//scroll vertical.
+/**
+ scroll vertical.
+ */
 - (void)panOutTextView:(UIPanGestureRecognizer *)panGesture{
     
-    if (_isFullScreen == YES) {//如果是显示情况什么都不管。
+    if (_isFullScreen == YES) {// do nothing when it fullScreen.
         return;
-    }else{//如果是隐藏情况上下移动就
+    }else{
         if(panGesture.state == UIGestureRecognizerStateChanged){
             CGPoint transalte = [panGesture translationInView:[UIApplication sharedApplication].keyWindow];
             CGRect rect = self.consoleWindow.frame;
@@ -295,10 +357,12 @@ typedef void (^clearTextBlock)(void);
         }
     }
 }
-//双击操作
+/**
+ double tap
+ */
 - (void)doubleTapTextView:(UITapGestureRecognizer *)tapGesture{
     
-    if (_isFullScreen == NO) {//变成全屏
+    if (!_isFullScreen) {//变成全屏
         [UIView animateWithDuration:0.2 animations:^{
             dispatch_async(dispatch_get_main_queue(), ^{
                 self.consoleWindow.consoleRootViewController.text = _logSting;
