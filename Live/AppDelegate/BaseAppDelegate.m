@@ -10,8 +10,8 @@
 
 @implementation BaseAppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    [self enterApplication];
     [self initScreenLog];
+    [self enterApplication];
     return YES;
 }
 
