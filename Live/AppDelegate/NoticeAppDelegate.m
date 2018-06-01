@@ -9,5 +9,8 @@
 #import "NoticeAppDelegate.h"
 
 @implementation NoticeAppDelegate
-
+-(void)initScreenLog
+{
+    [[GHConsole sharedConsole] startPrintLog];
+}
 @end

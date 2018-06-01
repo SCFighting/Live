@@ -11,6 +11,7 @@
 @implementation BaseAppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self enterApplication];
+    [self initScreenLog];
     return YES;
 }
 
@@ -19,8 +20,19 @@
  */
 -(void)enterApplication{}
 
+
+/**
+ Appdelegate
+
+ @return return value Appdelegate
+ */
 +(instancetype)shareDelegate
 {
     return (BaseAppDelegate *)[UIApplication sharedApplication].delegate;
 }
+
+/**
+ 初始化屏幕 log
+ */
+-(void)initScreenLog{}
 @end

@@ -12,11 +12,13 @@
 #import "AppDelegate.h"
 #import "SCLoginViewModel.h"
 #import "AppDelegate.h"
+#import <TXLivePush.h>
 
 @interface LoginViewController ()
 @property (nonatomic , strong ) LoginView *loginView;
 @property (nonatomic , strong ) LoginViewManager *loginViewManager;
 @property (nonatomic , strong ) SCLoginViewModel *loginViewModel;
+@property (nonatomic , strong ) TXLivePush *txLivePush;
 @end
 
 @implementation LoginViewController
@@ -32,11 +34,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    @weakify(self);
     [self.loginViewModel loginWithSuccess:^(id response) {
-//        NSLog(@"####%@########",self.loginViewModel);
+        //请求推流地址
+        @strongify(self);
+        [self.loginView removeFromSuperview];
+        self.loginView = nil;
+        [self.txLivePush startPreview:self.view];
     }];
-    AppDelegate *delegate = [AppDelegate shareDelegate];
-    delegate.window.rootViewController = nil;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,6 +80,14 @@
         _loginViewModel = [[SCLoginViewModel alloc] init];
     }
     return _loginViewModel;
+}
+
+-(TXLivePush *)txLivePush
+{
+    if (_txLivePush == nil) {
+        _txLivePush = [[TXLivePush alloc] initWithConfig:[[TXLivePushConfig alloc] init]];
+    }
+    return _txLivePush;
 }
 
 @end
