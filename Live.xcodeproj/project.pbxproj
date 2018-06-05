@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52540BFE20C6729800B8B841 /* AppelPencilView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52540BFD20C6729800B8B841 /* AppelPencilView.m */; };
+		52540C0120C672BB00B8B841 /* DrawLineInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 52540C0020C672BB00B8B841 /* DrawLineInfo.m */; };
 		525D60ED20B7AD6000E6CB0B /* BaseAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D60EC20B7AD6000E6CB0B /* BaseAppDelegate.m */; };
 		525D60F020B7AE2A00E6CB0B /* NoticeAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D60EF20B7AE2A00E6CB0B /* NoticeAppDelegate.m */; };
 		525D60F320B7AEC300E6CB0B /* StyleAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 525D60F220B7AEC300E6CB0B /* StyleAppDelegate.m */; };
@@ -78,6 +80,10 @@
 
 /* Begin PBXFileReference section */
 		45C8CC258FBE6681911AAC95 /* Pods-Live.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Live.release.xcconfig"; path = "Pods/Target Support Files/Pods-Live/Pods-Live.release.xcconfig"; sourceTree = "<group>"; };
+		52540BFC20C6729800B8B841 /* AppelPencilView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppelPencilView.h; sourceTree = "<group>"; };
+		52540BFD20C6729800B8B841 /* AppelPencilView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppelPencilView.m; sourceTree = "<group>"; };
+		52540BFF20C672BB00B8B841 /* DrawLineInfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DrawLineInfo.h; sourceTree = "<group>"; };
+		52540C0020C672BB00B8B841 /* DrawLineInfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DrawLineInfo.m; sourceTree = "<group>"; };
 		525D60EB20B7AD6000E6CB0B /* BaseAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseAppDelegate.h; sourceTree = "<group>"; };
 		525D60EC20B7AD6000E6CB0B /* BaseAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseAppDelegate.m; sourceTree = "<group>"; };
 		525D60EE20B7AE2A00E6CB0B /* NoticeAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeAppDelegate.h; sourceTree = "<group>"; };
@@ -352,6 +358,10 @@
 			children = (
 				527D90A4209D500F00D91BF5 /* LoginView.h */,
 				527D90A5209D500F00D91BF5 /* LoginView.m */,
+				52540BFC20C6729800B8B841 /* AppelPencilView.h */,
+				52540BFD20C6729800B8B841 /* AppelPencilView.m */,
+				52540BFF20C672BB00B8B841 /* DrawLineInfo.h */,
+				52540C0020C672BB00B8B841 /* DrawLineInfo.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -622,6 +632,7 @@
 			files = (
 				527D90A6209D500F00D91BF5 /* LoginView.m in Sources */,
 				5268BFF520BD57D8009C622D /* SCSafeMutableArray.m in Sources */,
+				52540BFE20C6729800B8B841 /* AppelPencilView.m in Sources */,
 				527D90BF209D5DF200D91BF5 /* LoginViewManager.m in Sources */,
 				527D9078209C45A700D91BF5 /* AppDelegate.m in Sources */,
 				5268BFFC20BD8473009C622D /* SCLoginViewModel.m in Sources */,
@@ -635,6 +646,7 @@
 				527D90A1209D4FF100D91BF5 /* SCBaseView.m in Sources */,
 				527D9072209C45A700D91BF5 /* main.m in Sources */,
 				5268BFF320BD57D8009C622D /* UIView+property.m in Sources */,
+				52540C0120C672BB00B8B841 /* DrawLineInfo.m in Sources */,
 				527D90B5209D5D2A00D91BF5 /* SCBaseViewController.m in Sources */,
 				527D9083209C4B9B00D91BF5 /* SCDevelopmentTools.h in Sources */,
 			);

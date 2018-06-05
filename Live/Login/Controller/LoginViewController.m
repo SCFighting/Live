@@ -14,12 +14,15 @@
 #import "AppDelegate.h"
 #import <TXLivePush.h>
 #import <Social/Social.h>
+#import "AppelPencilView.h"
 
 @interface LoginViewController ()<TXVideoCustomProcessDelegate>
 @property (nonatomic , strong ) LoginView *loginView;
 @property (nonatomic , strong ) LoginViewManager *loginViewManager;
 @property (nonatomic , strong ) SCLoginViewModel *loginViewModel;
 @property (nonatomic , strong ) TXLivePush *txLivePush;
+@property (nonatomic , strong ) AppelPencilView *pencilView;
+@property (nonatomic , strong ) UIButton *resetButton;
 @end
 
 @implementation LoginViewController
@@ -27,22 +30,31 @@
 -(void)loadView
 {
     [super loadView];
-    [self.view addSubview:self.loginView];
-    [self.loginView mas_makeConstraints:^(MASConstraintMaker *make) {
+//    [self.view addSubview:self.loginView];
+//    [self.loginView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.edges.mas_equalTo(self.view);
+//    }];
+    [self.view addSubview:self.pencilView];
+    [self.view addSubview:self.resetButton];
+    [self.pencilView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(self.view);
+    }];
+    [self.resetButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.bottom.mas_equalTo(self.view);
+        make.size.mas_equalTo(CGSizeMake(60, 40));
     }];
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    @weakify(self);
-    [self.loginViewModel loginWithSuccess:^(id response) {
-        //请求推流地址
-        @strongify(self);
-        [self.loginView removeFromSuperview];
-        self.loginView = nil;
-        [self.txLivePush startPreview:self.view];
-    }];
+//    @weakify(self);
+//    [self.loginViewModel loginWithSuccess:^(id response) {
+//        //请求推流地址
+//        @strongify(self);
+//        [self.loginView removeFromSuperview];
+//        self.loginView = nil;
+//        [self.txLivePush startPreview:self.view];
+//    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -97,6 +109,27 @@
         _txLivePush.videoProcessDelegate = self;
     }
     return _txLivePush;
+}
+
+-(AppelPencilView *)pencilView
+{
+    if (_pencilView == nil) {
+        _pencilView = [[AppelPencilView alloc] initWithFrame:CGRectZero];
+    }
+    return _pencilView;
+}
+
+-(UIButton *)resetButton
+{
+    if (_resetButton == nil) {
+        _resetButton = [[UIButton alloc] init];
+        [_resetButton setTitle:@"恢复" forState:UIControlStateNormal];
+        [_resetButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [[_resetButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            [self.pencilView cleanFinallyDraw];
+        }];
+    }
+    return _resetButton;
 }
 
 @end
