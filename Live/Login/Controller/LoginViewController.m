@@ -42,6 +42,9 @@
     [self.resetButton mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.bottom.mas_equalTo(self.view);
         make.size.mas_equalTo(CGSizeMake(60, 40));
+        
+        
+        
     }];
 }
 

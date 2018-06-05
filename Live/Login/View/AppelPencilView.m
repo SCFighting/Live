@@ -31,12 +31,6 @@
     CGContextRef context=UIGraphicsGetCurrentContext();
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetLineJoin(context, kCGLineJoinRound);
-
-    
-    
-    
-    
-    
     if (_allMyDrawPaletteLineInfos.count>0) {
         for (int oneTeamLine = 0; oneTeamLine < self.allMyDrawPaletteLineInfos.count;oneTeamLine++) {
             NSMutableArray *oneTeamLineInfoArry = self.allMyDrawPaletteLineInfos[oneTeamLine];
@@ -57,16 +51,10 @@
                     CGContextAddLineToPoint(context, myStartPoint.x,myStartPoint.y);
                 }
                 CGContextSetStrokeColorWithColor(context, info.lineColor.CGColor);
-                CGContextSetLineWidth(context, info.lineWidth+1);
+                CGContextSetLineWidth(context, info.lineWidth);
                 CGContextStrokePath(context);
             }
-            
-            
-            
         }
-        
-        
-        
     }
 }
 
@@ -78,9 +66,10 @@
     UITouch* touch=[touches anyObject];
     
     if (@available(iOS 9.0, *)) {
-        [self drawPaletteTouchesBeganWithWidth:touch.force * 4 andColor:self.currentPaintBrushColor andBeginPoint:[touch locationInView:self ]];
+        [self drawPaletteTouchesBeganWithWidth:(touch.force > 0 ? (touch.force * 1.0) : 1.0 ) andColor:self.currentPaintBrushColor andBeginPoint:[touch locationInView:self ]];
     } else {
         // Fallback on earlier versions
+        [self drawPaletteTouchesBeganWithWidth:1.0 andColor:self.currentPaintBrushColor andBeginPoint:[touch locationInView:self ]];
     }
     [self setNeedsDisplay];
 }
@@ -89,9 +78,9 @@
     NSArray* MovePointArray=[touches allObjects];
     UITouch *touch = [touches anyObject];
     if (@available(iOS 9.0, *)) {
-        [self drawPaletteTouchesMovedWithPonit:[[MovePointArray objectAtIndex:0] locationInView:self] width:touch.force * 4];
+        [self drawPaletteTouchesMovedWithPonit:[[MovePointArray objectAtIndex:0] locationInView:self] width:(touch.force > 0 ? (touch.force * 1.0) : 1.0 )];
     } else {
-        // Fallback on earlier versions
+        [self drawPaletteTouchesMovedWithPonit:[[MovePointArray objectAtIndex:0] locationInView:self] width:1.0];
     }
     [self setNeedsDisplay];
 }
