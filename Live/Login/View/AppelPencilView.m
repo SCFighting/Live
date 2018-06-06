@@ -17,7 +17,7 @@
         _allMyDrawPaletteLineInfos = [[NSMutableArray alloc] initWithCapacity:10];
         self.currentPaintBrushColor = [UIColor blackColor];
         self.backgroundColor = [UIColor clearColor];
-        self.currentPaintBrushWidth =  1.0f;
+        self.currentPaintBrushWidth =  0.01f;
     }
     return self;
     
@@ -66,10 +66,10 @@
     UITouch* touch=[touches anyObject];
     
     if (@available(iOS 9.0, *)) {
-        [self drawPaletteTouchesBeganWithWidth:(touch.force > 0 ? (touch.force * 1.0) : 1.0 ) andColor:self.currentPaintBrushColor andBeginPoint:[touch locationInView:self ]];
+        [self drawPaletteTouchesBeganWithWidth:(touch.force > 0 ? (touch.force > 1 ? 1 : touch.force): 0.01 ) andColor:self.currentPaintBrushColor andBeginPoint:[touch locationInView:self ]];
     } else {
         // Fallback on earlier versions
-        [self drawPaletteTouchesBeganWithWidth:1.0 andColor:self.currentPaintBrushColor andBeginPoint:[touch locationInView:self ]];
+        [self drawPaletteTouchesBeganWithWidth:0.01 andColor:self.currentPaintBrushColor andBeginPoint:[touch locationInView:self ]];
     }
     [self setNeedsDisplay];
 }
@@ -78,9 +78,9 @@
     NSArray* MovePointArray=[touches allObjects];
     UITouch *touch = [touches anyObject];
     if (@available(iOS 9.0, *)) {
-        [self drawPaletteTouchesMovedWithPonit:[[MovePointArray objectAtIndex:0] locationInView:self] width:(touch.force > 0 ? (touch.force * 1.0) : 1.0 )];
+        [self drawPaletteTouchesMovedWithPonit:[[MovePointArray objectAtIndex:0] locationInView:self] width:(touch.force > 0 ? (touch.force > 1 ? 1 : touch.force): 0.01 )];
     } else {
-        [self drawPaletteTouchesMovedWithPonit:[[MovePointArray objectAtIndex:0] locationInView:self] width:1.0];
+        [self drawPaletteTouchesMovedWithPonit:[[MovePointArray objectAtIndex:0] locationInView:self] width:0.01];
     }
     [self setNeedsDisplay];
 }
@@ -106,12 +106,12 @@
 - (void)drawPaletteTouchesMovedWithPonit:(CGPoint)mPoint width:(CGFloat)width{
     NSMutableArray *oneTeamLineInfo = [self.allMyDrawPaletteLineInfos lastObject];
     DrawLineInfo *lastInfo = [oneTeamLineInfo lastObject];
-    if (lastInfo.lineWidth == width) {
+    if (lastInfo.lineWidth >= (width + 2)) {
         [lastInfo.linePoints addObject:[NSValue valueWithCGPoint:mPoint]];
     }else
     {
         DrawLineInfo *info = [DrawLineInfo new];
-        info.lineColor = [UIColor blackColor];
+        info.lineColor = [UIColor redColor];
         info.lineWidth = width;
         [info.linePoints addObject:lastInfo.linePoints.lastObject];
         [info.linePoints addObject:[NSValue valueWithCGPoint:mPoint]];
