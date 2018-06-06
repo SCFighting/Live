@@ -30,7 +30,8 @@
     
     CGContextRef context=UIGraphicsGetCurrentContext();
     CGContextSetLineCap(context, kCGLineCapRound);
-    CGContextSetLineJoin(context, kCGLineJoinRound);
+    CGContextSetLineJoin(context, kCGLineJoinBevel);
+    CGContextSetShouldAntialias(context, YES);
     if (_allMyDrawPaletteLineInfos.count>0) {
         for (int oneTeamLine = 0; oneTeamLine < self.allMyDrawPaletteLineInfos.count;oneTeamLine++) {
             NSMutableArray *oneTeamLineInfoArry = self.allMyDrawPaletteLineInfos[oneTeamLine];
@@ -38,7 +39,7 @@
             for (int i=0; i<[oneTeamLineInfoArry count]; i++) {
                 DrawLineInfo *info = oneTeamLineInfoArry[i];
                 
-                CGContextBeginPath(context);
+                CGContextBeginPath(context);            
                 CGPoint myStartPoint=[[info.linePoints objectAtIndex:0] CGPointValue];
                 CGContextMoveToPoint(context, myStartPoint.x, myStartPoint.y);
                 
