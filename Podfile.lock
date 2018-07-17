@@ -17,7 +17,7 @@ PODS:
   - GHConsole (1.3.0)
   - Masonry (1.1.0)
   - ReactiveObjC (2.1.2)
-  - TXLiteAVSDK_Professional (4.7.4395)
+  - TXLiteAVSDK_Professional (4.9.4665)
 
 DEPENDENCIES:
   - AFNetworking
@@ -31,7 +31,7 @@ SPEC CHECKSUMS:
   GHConsole: 8fa768c1b30139e7baa192508ead18fd71f4b7db
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   ReactiveObjC: 7b6782ae39f9ac0f57205c3b0c0b69b9dd7048c0
-  TXLiteAVSDK_Professional: 1c874347e00d04a86bad905a37e0a737e464a328
+  TXLiteAVSDK_Professional: 1498cf13676e0cd936b8c8e3e0bbacf90c6cdd38
 
 PODFILE CHECKSUM: 7f38c4753fe4d4f49bd6b8ee3f77bb82a97a2b63
 
