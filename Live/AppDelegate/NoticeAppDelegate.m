@@ -11,6 +11,6 @@
 @implementation NoticeAppDelegate
 -(void)initScreenLog
 {
-    [[GHConsole sharedConsole] startPrintLog];
+//    [[GHConsole sharedConsole] startPrintLog];
 }
 @end

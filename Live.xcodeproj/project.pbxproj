@@ -27,7 +27,6 @@
 		527D9072209C45A700D91BF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D9064209C45A700D91BF5 /* main.m */; };
 		527D9073209C45A700D91BF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D9064209C45A700D91BF5 /* main.m */; };
 		527D9074209C45A700D91BF5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D9064209C45A700D91BF5 /* main.m */; };
-		527D9075209C45A700D91BF5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 527D9065209C45A700D91BF5 /* Info.plist */; };
 		527D9076209C45A700D91BF5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 527D9065209C45A700D91BF5 /* Info.plist */; };
 		527D9077209C45A700D91BF5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 527D9065209C45A700D91BF5 /* Info.plist */; };
 		527D9078209C45A700D91BF5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 527D9068209C45A700D91BF5 /* AppDelegate.m */; };
@@ -483,7 +482,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = "";
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = SC;
 				TargetAttributes = {
 					52A2290E2092BED700B979C0 = {
@@ -524,7 +523,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				527D9075209C45A700D91BF5 /* Info.plist in Resources */,
 				527D906F209C45A700D91BF5 /* Main.storyboard in Resources */,
 				527D9069209C45A700D91BF5 /* Assets.xcassets in Resources */,
 				527D906C209C45A700D91BF5 /* LaunchScreen.storyboard in Resources */,
@@ -825,7 +823,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5HZGRL3NY;
+				DEVELOPMENT_TEAM = QH7TA876TJ;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = /Users/sc/Desktop/Live/Live/Source/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/Live/Source/Info.plist";
@@ -850,7 +848,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = T5HZGRL3NY;
+				DEVELOPMENT_TEAM = QH7TA876TJ;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = NO;
 				GCC_PREFIX_HEADER = /Users/sc/Desktop/Live/Live/Source/PrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/Live/Source/Info.plist";
