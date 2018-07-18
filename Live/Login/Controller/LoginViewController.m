@@ -51,6 +51,12 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
@@ -82,7 +88,7 @@
     /// bind the destination texture
     glBindTexture(GL_TEXTURE_2D, texture);
 //    /// copy from framebuffer (here, the FBO!) to the bound texture
-    glCopyTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, 0, 0, width / 2,height / 4);
+    glCopyTexSubImage2D(GL_TEXTURE_2D, 0, 0, 0, 0, 0, width,height);
     /// unbind the FBO
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
     glBindTexture(GL_TEXTURE_2D,0);
@@ -110,15 +116,15 @@
  */
 - (GLuint)setupTexture:(UIImage *)image {
     CGImageRef cgImageRef = [image CGImage];
-    GLuint width = (GLuint)CGImageGetWidth(cgImageRef);
-    GLuint height = (GLuint)CGImageGetHeight(cgImageRef);
+    GLuint width = (GLuint)CGImageGetWidth(cgImageRef)*0.25;
+    GLuint height = (GLuint)CGImageGetHeight(cgImageRef)*0.25;
     CGRect rect = CGRectMake(0, 0, width, height);
     
     CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     void *imageData = malloc(width * height * 4);
     CGContextRef context = CGBitmapContextCreate(imageData, width, height, 8, width * 4, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
-    CGContextTranslateCTM(context, 0, height);
-    CGContextScaleCTM(context, 1.0f, -1.0f);
+//    CGContextTranslateCTM(context, 0, height);
+//    CGContextScaleCTM(context, 1.0f, -1.0f);
     CGColorSpaceRelease(colorSpace);
     CGContextClearRect(context, rect);
     CGContextDrawImage(context, rect, cgImageRef);
@@ -194,7 +200,7 @@
         TXLivePushConfig *config = [[TXLivePushConfig alloc] init];
         config.beautyFilterDepth = 9.0;
         config.whiteningFilterDepth = 9.0;
-//        config.frontCamera = NO;
+        config.frontCamera = NO;
         _txLivePush = [[TXLivePush alloc] initWithConfig:config];
         _txLivePush.videoProcessDelegate = self;
     }
