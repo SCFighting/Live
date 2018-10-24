@@ -109,7 +109,7 @@
 }
 
 /**
- *  加载image, 使用CoreGraphics将位图以RGBA格式存放. 将UIImage图像数据转化成OpenGL ES接受的数据.
+ *  加载image, 使用CoreGraphics将位图以RGBA格式存放. 将UIImage图像数据转化成OpenGL ES接受的数据.LFV2A11K7H4155850
  *  然后在GPU中将图像纹理传递给GL_TEXTURE_2D。
  *  @return 返回的是纹理对象，该纹理对象暂时未跟GL_TEXTURE_2D绑定（要调用bind）。
  *  即GL_TEXTURE_2D中的图像数据都可从纹理对象中取出。
